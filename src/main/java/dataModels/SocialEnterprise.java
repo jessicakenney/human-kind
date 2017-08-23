@@ -8,8 +8,8 @@ public class SocialEnterprise extends Business {
     private String humanKind;
     private float humanKindByPercentage;
 
-    public SocialEnterprise(String name, String type, float latitutde, float longitude, String humanKind, float humanKindByPercentage) {
-        super(name, type, latitutde, longitude);
+    public SocialEnterprise(String name, String type, float latitude, float longitude, String humanKind, float humanKindByPercentage) {
+        super(name, type, latitude, longitude);
         this.humanKind = humanKind;
         this.humanKindByPercentage = humanKindByPercentage;
     }
