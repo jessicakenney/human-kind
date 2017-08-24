@@ -8,7 +8,7 @@ public class Philanthropic extends Business {
     private List<String> charities;
     private double annualContribution;
 
-    public Philanthropic (String name, String type, float latitude, float longitude,List<String> charities, double annualContribution) {
+    public Philanthropic (String name, String type, Double latitude, Double longitude,List<String> charities, Double annualContribution) {
         super(name, type, latitude, longitude);
         this.charities = charities;
         this.annualContribution = annualContribution;
@@ -31,7 +31,7 @@ public class Philanthropic extends Business {
         this.charities = charities;
     }
 
-    public double getAnnualContribution() {
+    public Double getAnnualContribution() {
         return annualContribution;
     }
 

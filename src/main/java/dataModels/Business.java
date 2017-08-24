@@ -4,10 +4,10 @@ package dataModels;
 public class Business {
     private String name;
     private String type;
-    private float latitude;
-    private float longitude;
+    private Double latitude;
+    private Double longitude;
 
-    public Business (String name, String type, float latitude, float longitude) {
+    public Business (String name, String type, Double latitude, Double longitude) {
         this.name = name;
         this.type = type;
         this.latitude = latitude;
@@ -21,11 +21,11 @@ public class Business {
         return type;
     }
 
-    public float getLatitude() {
+    public Double getLatitude() {
         return latitude;
     }
 
-    public float getLongitude() {
+    public Double getLongitude() {
         return longitude;
     }
 
@@ -36,18 +36,18 @@ public class Business {
 
         Business business = (Business) o;
 
-        if (Float.compare(business.latitude, latitude) != 0) return false;
-        if (Float.compare(business.longitude, longitude) != 0) return false;
         if (!name.equals(business.name)) return false;
-        return type.equals(business.type);
+        if (!type.equals(business.type)) return false;
+        if (latitude != null ? !latitude.equals(business.latitude) : business.latitude != null) return false;
+        return longitude != null ? longitude.equals(business.longitude) : business.longitude == null;
     }
 
     @Override
     public int hashCode() {
         int result = name.hashCode();
         result = 31 * result + type.hashCode();
-        result = 31 * result + (latitude != +0.0f ? Float.floatToIntBits(latitude) : 0);
-        result = 31 * result + (longitude != +0.0f ? Float.floatToIntBits(longitude) : 0);
+        result = 31 * result + (latitude != null ? latitude.hashCode() : 0);
+        result = 31 * result + (longitude != null ? longitude.hashCode() : 0);
         return result;
     }
 }

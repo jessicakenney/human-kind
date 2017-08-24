@@ -6,9 +6,9 @@ package dataModels;
 public class SocialEnterprise extends Business {
     private int id;
     private String humanKind;
-    private float humanKindByPercentage;
+    private Double humanKindByPercentage;
 
-    public SocialEnterprise(String name, String type, float latitude, float longitude, String humanKind, float humanKindByPercentage) {
+    public SocialEnterprise(String name, String type, Double latitude, Double longitude, String humanKind, Double humanKindByPercentage) {
         super(name, type, latitude, longitude);
         this.humanKind = humanKind;
         this.humanKindByPercentage = humanKindByPercentage;
@@ -30,11 +30,11 @@ public class SocialEnterprise extends Business {
         this.humanKind = humanKind;
     }
 
-    public float getHumanKindByPercentage() {
+    public Double getHumanKindByPercentage() {
         return humanKindByPercentage;
     }
 
-    public void setHumanKindByPercentage(float humanKindByPercentage) {
+    public void setHumanKindByPercentage(Double humanKindByPercentage) {
         this.humanKindByPercentage = humanKindByPercentage;
     }
 
@@ -42,19 +42,21 @@ public class SocialEnterprise extends Business {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
 
         SocialEnterprise that = (SocialEnterprise) o;
 
         if (id != that.id) return false;
-        if (Float.compare(that.humanKindByPercentage, humanKindByPercentage) != 0) return false;
-        return humanKind.equals(that.humanKind);
+        if (!humanKind.equals(that.humanKind)) return false;
+        return humanKindByPercentage != null ? humanKindByPercentage.equals(that.humanKindByPercentage) : that.humanKindByPercentage == null;
     }
 
     @Override
     public int hashCode() {
-        int result = id;
+        int result = super.hashCode();
+        result = 31 * result + id;
         result = 31 * result + humanKind.hashCode();
-        result = 31 * result + (humanKindByPercentage != +0.0f ? Float.floatToIntBits(humanKindByPercentage) : 0);
+        result = 31 * result + (humanKindByPercentage != null ? humanKindByPercentage.hashCode() : 0);
         return result;
     }
 }

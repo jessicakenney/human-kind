@@ -17,7 +17,7 @@ public class Sql2oPhilanthropicDao implements PhilanthropicDao {
 
     @Override
     public void add(Philanthropic philanthropic) {
-        String sql = "INSERT INTO philanthropics(name,type,latitude,longitude) VALUES (:name,:type,:latitude,:longitude)"; //raw sql
+        String sql = "INSERT INTO philanthropics(name,type,latitude,longitude,charities,annualContribution) VALUES (:name,:type,:latitude,:longitude,:charities,:annualContribution)"; //raw sql
         try (Connection con = sql2o.open()) { //try to open a connection
             int id = (int) con.createQuery(sql) //make a new variable
                     .addParameter("name", philanthropic.getName())
