@@ -1,0 +1,20 @@
+# List is not working in Postman 
+# Think about send goodmaps geocode endpoint 
+{
+    "name": "Jacqueline",
+    "type": "Restaurant",
+    "latitude" : "45.5",
+    "longitude" : "-122.64",
+    "charities": [
+    	"https://ecotrust.com",
+    	"https://feedseniors.org"
+    ],
+    "annualContribution" : ".04"
+}
+
+
+curl -o jacqueline.out https://maps.googleapis.com/maps/api/geocode/json?address=2039+Se+Clinto+St,+Portland,+OR&key=AIzaSyCZsiHWDTU8Y-hPyDqe_Ok9CUeAUMEMJiw
+
+"lat" : 45.5035507,
+"lng" : -122.6448143
+
