@@ -18,7 +18,8 @@ together tours based on the addresses of selected businesses.
 
 ## Postman Verification
 
-![Alt text](https://github.com/jessicakenney/human-kind/src/main/resources/public/images/postman1.png)
+![Alt text](src/main/resources/public/images/postman1.png)
+
 
 ## Setup
 git clone https://github.com/jessicakenney/human-kindness.git  

@@ -1,5 +1,5 @@
-# List is not working in Postman 
-# Think about send goodmaps geocode endpoint 
+# Think about send googlemaps geocode endpoint 
+
 {
     "name": "Jacqueline",
     "type": "Restaurant",
