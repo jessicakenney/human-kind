@@ -20,10 +20,10 @@ public class Sql2oPhilanthropicDaoTest {
   public Philanthropic getTestPhilanthropic() {
     String name = "ChaChaCha";
     String type = "Restaurant";
-    Double latitude = 45.50;
-    Double longitude = -122.644;
-    List<String> charities = Arrays.asList("charity1", "charity2", "charity3");
-    Double annualContribution = .04;
+    double latitude = 45.50;
+    double longitude = -122.644;
+    String charities = "Yes";
+    double annualContribution = .04;
     return new Philanthropic(name, type, latitude, longitude, charities, annualContribution);
   }
 
@@ -31,10 +31,10 @@ public class Sql2oPhilanthropicDaoTest {
   public Philanthropic getTestPhilanthropic2() {
     String name = "place2";
     String type = "hobbystore";
-    Double latitude = 45.00;
-    Double longitude = -123.333;
-    List<String> charities = Arrays.asList("charity1", "charity2", "charity3");
-    Double annualContribution = .06;
+    double latitude = 45.00;
+    double longitude = -123.333;
+    String charities = "Maybe";
+    double annualContribution = .06;
     return new Philanthropic(name, type, latitude, longitude, charities, annualContribution);
   }
 
@@ -72,10 +72,11 @@ public class Sql2oPhilanthropicDaoTest {
     Philanthropic philanthropic = getTestPhilanthropic();
     Philanthropic anotherPhilanthropic = getTestPhilanthropic2();
     philanthropicDao.add(philanthropic);
-    System.out.println("DEBUG-->"+philanthropic.getName());
+    System.out.println("DEBUG-->"+philanthropic.getLatitude());
     philanthropicDao.add(anotherPhilanthropic);
-    System.out.println("DEBUG-->"+anotherPhilanthropic.getName());
-    int number = philanthropicDao.getAll().size();
+    System.out.println("DEBUG-->"+anotherPhilanthropic.getLongitude());
+    List<Philanthropic> getThem = philanthropicDao.getAll();
+    int number = getThem.size();
     assertEquals(2, number);
   }
 

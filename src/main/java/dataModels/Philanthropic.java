@@ -1,14 +1,12 @@
 package dataModels;
-
-
 import java.util.List;
 
 public class Philanthropic extends Business {
     private int id;
-    private List<String> charities;
-    private double annualContribution;
+    private String charities;
+    private Double annualContribution;
 
-    public Philanthropic (String name, String type, Double latitude, Double longitude,List<String> charities, Double annualContribution) {
+    public Philanthropic (String name, String type, Double latitude, Double longitude, String charities, Double annualContribution) {
         super(name, type, latitude, longitude);
         this.charities = charities;
         this.annualContribution = annualContribution;
@@ -23,11 +21,11 @@ public class Philanthropic extends Business {
     }
 
 
-    public List<String> getCharities() {
+    public String getCharities() {
         return charities;
     }
 
-    public void setCharities(List<String> charities) {
+    public void setCharities(String charities) {
         this.charities = charities;
     }
 
@@ -63,3 +61,5 @@ public class Philanthropic extends Business {
         return result;
     }
 }
+
+
